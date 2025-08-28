@@ -12,6 +12,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 import basic_memory
 from basic_memory.utils import setup_logging, generate_permalink
+from basic_memory.vector.config import SearchConfig
 
 
 DATABASE_NAME = "memory.db"
@@ -78,6 +79,12 @@ class BasicMemoryConfig(BaseSettings):
     api_url: Optional[str] = Field(
         default=None,
         description="URL of remote Basic Memory API. If set, MCP will connect to this API instead of using local ASGI transport.",
+    )
+
+    # Search configuration
+    search_config: SearchConfig = Field(
+        default_factory=SearchConfig,
+        description="Search configuration including vector search settings"
     )
 
     model_config = SettingsConfigDict(

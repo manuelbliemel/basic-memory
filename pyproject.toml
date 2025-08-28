@@ -34,6 +34,11 @@ dependencies = [
     "pyjwt>=2.10.1",
     "python-dotenv>=1.1.0",
     "pytest-aio>=1.9.0",
+    # Vector search dependencies
+    "chromadb>=0.4.24",
+    "sentence-transformers>=2.2.2",
+    "openai>=1.12.0",
+    "numpy>=1.24.0",
 ]
 
 

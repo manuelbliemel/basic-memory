@@ -29,7 +29,7 @@ class TestBasicMemoryConfig:
 
     def test_model_post_init_respects_basic_memory_home(self, config_home, monkeypatch):
         """Test that model_post_init creates main project with BASIC_MEMORY_HOME when missing."""
-        custom_path = str(config_home / "custom" / "memory" / "path")
+        custom_path = (config_home / "custom" / "memory" / "path").as_posix()
         monkeypatch.setenv("BASIC_MEMORY_HOME", custom_path)
 
         # Create config without main project
